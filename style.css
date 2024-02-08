@@ -8,28 +8,101 @@
 body {
     height: 100%;
     width: 100%;
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* effective animation for  h1 */
+h1 {
+    font-size: 100px;
+    font-weight: 800;
+    position: relative;
+    
 }
 
+h1::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 10px;
+    bottom: 0;
+    background-color: #000;
+    left: 0%;
+}
+h1::before{
+    content: "❤️";
+}
+h1:hover::after{
+animation-name: shivH1;
+animation-duration: 2s;
+}
+
+@keyframes shivH1 {
+     0%{
+        left: 0;
+        width: 0;
+        
+     }
+     50%{
+        width: 100%;
+        left: 0;
+     
+     }
+     100%{
+        width: 0%;
+        left:100%
+       
+     }
+}
+
+
+
+
+
+
+
+/* make animation of box   */
 .box {
-    height: 300px;
+    /* height: 300px;
     width: 300px;
     background-color: lightseagreen;
     position: absolute;
     animation-name: shivAnimation;
     animation-duration: 2s;
-    animation-delay: 1s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite; */
+    /* animation-timing-function:ease-in ; */
+    /* animation-timing-function: linear; */
+    /* animation-timing-function: cubic-bezier(.02, .99, .65, .43);
+    animation-direction:alternate; */
 }
 
-/* make animation  */
 
 @keyframes shivAnimation {
-    from {
+    0%{
         left: 0%;
+        top: 0%;
         background-color: lightseagreen;
+        rotate: 0deg;
     }
-
-    to {
-        left: 60%;
+    50%{
+           left: 75%;
+            top: 0%;
+            background-color: lightseagreen;
+            
+    }
+    75% {
+            left: 0%;
+            top: 75%;
+            background-color: blueviolet;
+           
+        }
+    100% {
+        left: 75%;
+        top: 75%;
         background-color: salmon;
+        rotate: 360deg;
     }
+   
 }
