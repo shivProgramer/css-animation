@@ -25,9 +25,11 @@ body {
 @keyframes shivAnimation {
     from {
         left: 0%;
+        background-color: lightseagreen;
     }
 
     to {
         left: 60%;
+        background-color: salmon;
     }
 }
